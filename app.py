@@ -25,7 +25,7 @@ transform = transforms.Compose([
 @st.cache_resource
 def load_model():
     model = CNN_TUMOR(img_size=IMG_SIZE, num_classes=len(CLASS_NAMES))
-    state = torch.load("weights/Brain_Tumor_best_state_dict.pt", map_location="cpu")
+    state = torch.load("Brain_Tumor_model_state_dict.pt", map_location="cpu")
     model.load_state_dict(state)
     model.eval()
     return model
